@@ -3,12 +3,12 @@
 
 #include "../../common.hpp"
 
-namespace versis {
-  namespace actuator {
+namespace Versis {
+  namespace Actuator {
     typedef struct {
       angle_t ang;
       fixed_t spd;
-    } motor_t;
+    } Motor;
   }
 }
 

@@ -1,9 +1,9 @@
-#ifndef __VERSIS_ENTITY_HPP__
-#define __VERSIS_ENTITY_HPP__
+#ifndef __VERSIS_Entity_HPP__
+#define __VERSIS_Entity_HPP__
 
 #include "../common.hpp"
 
-namespace versis {
+namespace Versis {
 
   typedef enum {
     STATE_STILL,
@@ -11,25 +11,21 @@ namespace versis {
     STATE_BUSY,
   } state_e;
 
-  class entity {
+  class Entity {
   private:
     body_t   body;
     state_e  state;
     error_t  err;
   public:
-    entity();
-
-    // To override
-    virtual
-    void step()     {}
+    Entity();
 
     // Getters
-    state_e get_state() const;
-    error_t get_err()   const;
-    body_t  get_body()  const;
+    state_e GetState() const;
+    error_t GetErr()   const;
+    body_t  GetBody()  const;
 
-    ~entity();
+    ~Entity();
   };
 };
 
-#endif //__VERSIS_ENTITY_HPP__
+#endif //__VERSIS_Entity_HPP__

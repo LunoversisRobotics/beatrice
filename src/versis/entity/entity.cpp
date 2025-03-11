@@ -1,24 +1,24 @@
-#include "./entity.hpp"
+#include "./Entity.hpp"
 
-namespace versis {
-  entity::entity() {
+namespace Versis {
+  Entity::Entity() {
     // Create a body at 0, 0 @ 0deg
     this->body  = create_body(create_axis(0, 0), vec2f(I_TO_FX(20), I_TO_FX(20)));
-    std::cout << "Created entity!" << std::endl;
+    std::cout << "Created Entity!" << std::endl;
   }
 
-  state_e entity::get_state() const {
+  state_e Entity::GetState() const {
     return this->state;
   }
 
-  error_t entity::get_err() const {
+  error_t Entity::GetErr() const {
     return this->err;
   }
 
-  body_t  entity::get_body() const {
+  body_t  Entity::GetBody() const {
     return this->body;
   }
 
-  entity::~entity() {
+  Entity::~Entity() {
   }
 }

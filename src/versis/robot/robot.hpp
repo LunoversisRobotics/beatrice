@@ -2,29 +2,27 @@
 #define __VERSIS_ROBOT_HPP__
 
 #include "../common.hpp"
-#include "../entity/entity.hpp"
-#include "../component/component.hpp"
+#include "../Entity/Entity.hpp"
+#include "../Component/Component.hpp"
 
-namespace versis {
-  class robot : public entity {
+namespace Versis {
+  class Robot : public Entity {
   private:
-    typedef entity super;
+    typedef Entity super;
     struct {
-      int               n_m;      // Number of motors
-      actuator::motor_t *motors;  // Motor array
+      int              n_m;     // Number of motors
+      Actuator::Motor *motors;  // Motor array
     };
   public:
-    robot(int n_m) : super()  {
+    Robot(int n_m) : super()  {
       // Motor Setup
       this->n_m   = n_m;
-      this->motors = 
-        (actuator::motor_t*)malloc(n_m * sizeof(actuator::motor_t));
+      this->motors =
+        (Actuator::Motor*)malloc(n_m * sizeof(Actuator::Motor));
       
       std::cout << "Created Robot" << std::endl;
     }
-    void step()     override  {}
-
-    ~robot() {
+    ~Robot() {
       if(motors) {
         free(motors);
       }
@@ -32,4 +30,4 @@ namespace versis {
   };
 };
 
-#endif //__VERSIS_ROBOT_HPP__
+#endif //__Versis_Robot_HPP__
